@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Run Handy's headless CLI over the QA corpus and report WER, RTF, latency, load time.
+"""Run lowyap's headless CLI over the QA corpus and report WER, RTF, latency, load time.
 
 Usage: scripts/qa/bench.sh [--app PATH] [--repeat N] [--limit N] MODEL_ID [MODEL_ID ...]
-MODEL_ID is the id printed by `handy --list-models`, e.g.
+MODEL_ID is the id printed by `lowyap --list-models`, e.g.
 handy-computer/parakeet-unified-en-0.6b-gguf/parakeet-unified-en-0.6b-Q8_0.gguf
 
 For each model, every utterance in .qa-corpus/manifest.jsonl is transcribed by one
-process: `handy --transcribe-file X.wav --model ID --repeat N --json`. Before that, one
+process: `lowyap --transcribe-file X.wav --model ID --repeat N --json`. Before that, one
 untimed warm-up process runs (it pays the cold Metal shader compile, ~3.8 s).
 
 Metrics (per model, also per subset):
@@ -41,8 +41,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CORPUS = REPO_ROOT / ".qa-corpus"
 RESULTS = REPO_ROOT / ".qa-results"
-DEFAULT_APP = REPO_ROOT / "src-tauri/target/release/bundle/macos/Handy.app"
-SETTINGS = Path.home() / "Library/Application Support/com.pais.handy/settings_store.json"
+DEFAULT_APP = REPO_ROOT / "src-tauri/target/release/bundle/macos/lowyap.app"
+SETTINGS = Path.home() / "Library/Application Support/com.lowyap.desktop/settings_store.json"
 # Settings that change what TranscriptionManager::transcribe returns (transcription.rs).
 RELEVANT_SETTINGS = [
     "selected_language", "translate_to_english", "custom_words",
@@ -82,9 +82,9 @@ def label(model: str) -> str:
 
 
 def handy_bin(app: Path) -> Path:
-    b = app / "Contents/MacOS/handy" if app.suffix == ".app" else app
+    b = app / "Contents/MacOS/lowyap" if app.suffix == ".app" else app
     if not b.exists():
-        raise SystemExit(f"error: Handy binary not found at {b} (pass --app or set HANDY_APP)")
+        raise SystemExit(f"error: lowyap binary not found at {b} (pass --app or set HANDY_APP)")
     return b
 
 
@@ -204,7 +204,7 @@ def markdown(env: dict, results: list[dict]) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("models", nargs="+", help="model ids as listed by `handy --list-models`")
+    ap.add_argument("models", nargs="+", help="model ids as listed by `lowyap --list-models`")
     ap.add_argument("--app", type=Path, default=Path(os.environ.get("HANDY_APP", DEFAULT_APP)))
     ap.add_argument("--repeat", type=int, default=3)
     ap.add_argument("--limit", type=int, help="only the first N utterances (smoke test)")
