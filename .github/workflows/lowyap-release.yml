@@ -36,7 +36,6 @@ jobs:
             -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
           git config --system core.longpaths true
       - uses: actions/checkout@v5
-
       - name: Resolve version
         id: version
         shell: pwsh
@@ -237,7 +236,11 @@ jobs:
 
           ``Get-FileHash .\<installer>.exe -Algorithm SHA256``
 
-          lowyap is based on [Handy](https://github.com/cjpais/Handy) by CJ Pais (MIT).
+          [Privacy note](https://github.com/$env:GITHUB_REPOSITORY/blob/main/PRIVACY.md) ·
+          [Terms](https://github.com/$env:GITHUB_REPOSITORY/blob/main/TERMS.md). For ages 18+.
+
+          lowyap is an independent project based on [Handy](https://github.com/cjpais/Handy)
+          by CJ Pais (MIT). Not affiliated with or endorsed by Handy, Microsoft or Apple.
           "@
           gh release view $env:TAG *> $null
           if ($LASTEXITCODE -eq 0) { throw "release $env:TAG already exists; delete it before re-running" }
