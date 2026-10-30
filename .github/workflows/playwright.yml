@@ -32,10 +32,15 @@ jobs:
       - name: Run Playwright tests
         run: bun run test:playwright
 
+      - name: Run flow tests (onboarding permissions, per-app tone)
+        run: bunx playwright test -c playwright.flow.config.ts
+
       - name: Upload test results
         if: failure()
         uses: actions/upload-artifact@v7
         with:
           name: playwright-report
-          path: playwright-report/
+          path: |
+            playwright-report/
+            test-results/flow/
           retention-days: 7
