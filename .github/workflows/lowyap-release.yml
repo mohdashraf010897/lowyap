@@ -231,10 +231,18 @@ jobs:
           $notes = @"
           Private, on-device dictation for Windows x64. Beta.
 
-          **Unsigned build.** Windows SmartScreen may warn on first run: choose
-          *More info* → *Run anyway*. Verify the download against ``SHA256SUMS``:
+          **Not code-signed yet.** Windows SmartScreen may say *"Windows protected your PC."*
+          That means the publisher is unverified, not that a virus was found. First verify
+          the download against ``SHA256SUMS``:
 
-          ``Get-FileHash .\<installer>.exe -Algorithm SHA256``
+          ``(Get-FileHash .\<installer>.exe -Algorithm SHA256).Hash.ToLower()``
+
+          If it matches, choose *More info* → *Run anyway*. If Smart App Control is on,
+          Windows will block lowyap until our signed build is ready; watch the repo to be notified.
+
+          Dictation works offline. Per-app tone and AI clean-up need a local LLM server
+          (e.g. Ollama) or your own API key. Only download lowyap from this repository.
+          Provided "as is", without warranty (see LICENSE).
 
           [Privacy note](https://github.com/$env:GITHUB_REPOSITORY/blob/main/PRIVACY.md) ·
           [Terms](https://github.com/$env:GITHUB_REPOSITORY/blob/main/TERMS.md). For ages 18+.
