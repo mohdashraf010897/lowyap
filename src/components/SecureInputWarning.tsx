@@ -7,7 +7,7 @@ import { commands, type SecureInputStatus } from "@/bindings";
 
 // Detailed remediation steps live in the docs rather than in the banner
 export const SECURE_INPUT_HELP_URL =
-  "https://handy.computer/docs/troubleshooting#shortcuts-stopped-working-on-macos-secure-input";
+  "https://github.com/mohdashraf010897/lowyap/blob/main/docs/troubleshooting/macos-secure-input.md";
 
 /**
  * Compact warning banner shown while macOS Secure Input is stuck on.

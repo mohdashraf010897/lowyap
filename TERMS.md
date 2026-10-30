@@ -9,4 +9,7 @@ kind, under the [MIT License](LICENSE). By using it you also agree that:
 3. Transcripts can contain mistakes. Do not rely on them for medical, legal,
    financial or other critical decisions without checking them yourself.
 
+lowyap is an independent project based on Handy by CJ Pais (MIT) and is not
+affiliated with or endorsed by Handy, Microsoft or Apple.
+
 See the [privacy note](PRIVACY.md) for what data lowyap handles.

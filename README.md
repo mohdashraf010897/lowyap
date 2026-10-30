@@ -12,9 +12,9 @@ lowyap is a free, open-source (MIT) speech-to-text app. It is in **beta**: Windo
 2. **Speak.**
 3. **Release.** A local model turns your speech into text and lowyap pastes it where your cursor is.
 
-- Audio is processed on your device. No account, no telemetry.
+- Audio is processed on your device. No lowyap account, no telemetry.
 - Choose from several local speech models (Parakeet, Whisper and others), downloaded once.
-- Optional per-app tone and optional AI clean-up with your own API key (off by default).
+- Optional per-app tone and AI clean-up are off by default. They use a local LLM server or your own API key; with an API key, transcript text is sent to your chosen provider.
 
 Read the [privacy note](PRIVACY.md) and [terms](TERMS.md).
 

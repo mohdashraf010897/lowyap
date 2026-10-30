@@ -240,8 +240,10 @@ jobs:
           If it matches, choose *More info* → *Run anyway*. If Smart App Control is on,
           Windows will block lowyap until our signed build is ready; watch the repo to be notified.
 
-          Dictation works offline. Per-app tone and AI clean-up need a local LLM server
-          (e.g. Ollama) or your own API key. Only download lowyap from this repository.
+          After you download a speech model, dictation works offline. Per-app tone and
+          AI clean-up are off by default and need a local LLM server or your own API key.
+          With an API key, transcript text is sent to your chosen provider.
+          Only download lowyap from this repository.
           Provided "as is", without warranty (see LICENSE).
 
           [Privacy note](https://github.com/$env:GITHUB_REPOSITORY/blob/main/PRIVACY.md) ·
