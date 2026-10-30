@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Accesibilidad",
-        "why": "Para que tu atajo funcione en cualquier app y lowyap pueda escribir el texto donde está tu cursor."
+        "why": "Para que tu atajo funcione en cualquier app y lowyap pueda escribir el texto donde está tu cursor.",
+        "stillWaiting": "¿Ya está activado pero sigue esperando? Selecciona lowyap en la lista, quítalo con − y vuelve a añadirlo con +."
       },
       "errors": {
         "checkFailed": "Error al verificar permisos. Por favor, inténtalo de nuevo.",

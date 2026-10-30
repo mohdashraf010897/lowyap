@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Accessibilità",
-        "why": "Così la tua scorciatoia funziona in ogni app e lowyap può scrivere il testo dove si trova il cursore."
+        "why": "Così la tua scorciatoia funziona in ogni app e lowyap può scrivere il testo dove si trova il cursore.",
+        "stillWaiting": "Già attivo ma ancora in attesa? Seleziona lowyap nell'elenco, rimuovilo con − e poi aggiungilo di nuovo con +."
       },
       "errors": {
         "checkFailed": "Impossibile verificare i permessi. Riprova.",

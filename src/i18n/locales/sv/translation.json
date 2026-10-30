@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Hjälpmedel",
-        "why": "Så att din genväg fungerar i alla appar och lowyap kan skriva texten där markören står."
+        "why": "Så att din genväg fungerar i alla appar och lowyap kan skriva texten där markören står.",
+        "stillWaiting": "Redan påslaget men väntar fortfarande? Markera lowyap i listan, ta bort den med − och lägg till den igen med +."
       },
       "errors": {
         "checkFailed": "Misslyckades med att kontrollera behörigheter. Försök igen.",

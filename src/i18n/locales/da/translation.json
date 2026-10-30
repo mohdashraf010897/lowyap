@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Hjælpemidler",
-        "why": "Så din genvej virker i alle apps, og lowyap kan skrive teksten dér, hvor din markør er."
+        "why": "Så din genvej virker i alle apps, og lowyap kan skrive teksten dér, hvor din markør er.",
+        "stillWaiting": "Allerede slået til, men venter stadig? Vælg lowyap på listen, fjern den med −, og tilføj den igen med +."
       },
       "errors": {
         "checkFailed": "Kunne ikke tjekke tilladelser. Prøv igen.",

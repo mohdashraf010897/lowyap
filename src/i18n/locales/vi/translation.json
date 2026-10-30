@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Trợ năng",
-        "why": "Để phím tắt của bạn hoạt động trong mọi ứng dụng, và lowyap có thể gõ văn bản vào nơi con trỏ của bạn đang đứng."
+        "why": "Để phím tắt của bạn hoạt động trong mọi ứng dụng, và lowyap có thể gõ văn bản vào nơi con trỏ của bạn đang đứng.",
+        "stillWaiting": "Đã bật nhưng vẫn đang chờ? Chọn lowyap trong danh sách, xóa bằng nút −, rồi thêm lại bằng nút +."
       },
       "errors": {
         "checkFailed": "Không thể kiểm tra quyền. Vui lòng thử lại.",

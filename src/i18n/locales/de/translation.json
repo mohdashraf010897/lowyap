@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Bedienungshilfen",
-        "why": "Damit dein Tastenkürzel in jeder App funktioniert und lowyap den Text dort eintippen kann, wo dein Cursor steht."
+        "why": "Damit dein Tastenkürzel in jeder App funktioniert und lowyap den Text dort eintippen kann, wo dein Cursor steht.",
+        "stillWaiting": "Schon aktiviert, aber es wartet noch? Wähle lowyap in der Liste aus, entferne es mit − und füge es mit + wieder hinzu."
       },
       "errors": {
         "checkFailed": "Berechtigungsprüfung fehlgeschlagen. Bitte erneut versuchen.",

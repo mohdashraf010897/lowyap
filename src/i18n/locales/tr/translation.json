@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Erişilebilirlik",
-        "why": "Kısayolunuz her uygulamada çalışsın ve lowyap metni imlecinizin bulunduğu yere yazabilsin diye."
+        "why": "Kısayolunuz her uygulamada çalışsın ve lowyap metni imlecinizin bulunduğu yere yazabilsin diye.",
+        "stillWaiting": "Zaten açık ama hâlâ bekliyor mu? Listede lowyap'ı seçin, − ile kaldırın, ardından + ile yeniden ekleyin."
       },
       "errors": {
         "checkFailed": "İzinler kontrol edilemedi. Lütfen tekrar deneyin.",

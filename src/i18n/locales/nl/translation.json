@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Toegankelijkheid",
-        "why": "Zodat je sneltoets in elke app werkt en lowyap de tekst kan typen waar je cursor staat."
+        "why": "Zodat je sneltoets in elke app werkt en lowyap de tekst kan typen waar je cursor staat.",
+        "stillWaiting": "Staat het al aan maar wacht het nog? Selecteer lowyap in de lijst, verwijder het met − en voeg het opnieuw toe met +."
       },
       "errors": {
         "checkFailed": "Machtigingen controleren mislukt. Probeer het opnieuw.",

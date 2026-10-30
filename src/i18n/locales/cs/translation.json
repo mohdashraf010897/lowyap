@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Zpřístupnění",
-        "why": "Aby vaše zkratka fungovala v každé aplikaci a lowyap mohl psát text tam, kde máte kurzor."
+        "why": "Aby vaše zkratka fungovala v každé aplikaci a lowyap mohl psát text tam, kde máte kurzor.",
+        "stillWaiting": "Už je zapnuto, ale pořád se čeká? Vyberte lowyap v seznamu, odeberte ho pomocí − a pak ho znovu přidejte pomocí +."
       },
       "errors": {
         "checkFailed": "Nepodařilo se zkontrolovat oprávnění. Zkuste to prosím znovu.",

@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Accessibilitat",
-        "why": "Perquè la drecera funcioni a totes les aplicacions i el lowyap pugui escriure el text on tingueu el cursor."
+        "why": "Perquè la drecera funcioni a totes les aplicacions i el lowyap pugui escriure el text on tingueu el cursor.",
+        "stillWaiting": "Ja està activat però encara espera? Selecciona lowyap a la llista, elimina'l amb − i torna'l a afegir amb +."
       },
       "errors": {
         "checkFailed": "No s'han pogut comprovar els permisos. Torneu-ho a provar.",

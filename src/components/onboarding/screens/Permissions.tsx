@@ -200,15 +200,21 @@ export const Permissions: React.FC<PermissionsProps> = ({
         </div>
         <p
           className={`mt-[18px] mb-0 text-small text-ink-3 ${
-            isMac && permissions.accessibility === "granted"
+            isMac && permissions.accessibility !== "needed"
               ? "visible"
               : "invisible"
           }`}
         >
-          <Trans
-            i18nKey="onboarding.permissions.relaunch"
-            components={{ relaunch: <TextLink onClick={relaunchHandy} /> }}
-          />
+          {/* A grant made for an earlier build (another signature) shows as
+              on but doesn't count for this one: only re-adding it does. */}
+          {permissions.accessibility === "waiting" ? (
+            t("onboarding.permissions.accessibility.stillWaiting")
+          ) : (
+            <Trans
+              i18nKey="onboarding.permissions.relaunch"
+              components={{ relaunch: <TextLink onClick={relaunchHandy} /> }}
+            />
+          )}
         </p>
       </ScreenMain>
     </OnboardingShell>

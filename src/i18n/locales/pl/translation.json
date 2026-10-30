@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Dostępność",
-        "why": "Żeby Twój skrót działał w każdej aplikacji, a lowyap mogło wpisywać tekst tam, gdzie jest kursor."
+        "why": "Żeby Twój skrót działał w każdej aplikacji, a lowyap mogło wpisywać tekst tam, gdzie jest kursor.",
+        "stillWaiting": "Już włączone, ale nadal czeka? Zaznacz lowyap na liście, usuń go przyciskiem −, a potem dodaj ponownie przyciskiem +."
       },
       "errors": {
         "checkFailed": "Nie udało się sprawdzić uprawnień. Spróbuj ponownie.",

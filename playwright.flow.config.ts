@@ -1,6 +1,7 @@
-// Headless UI tests for the Per-app tone screen, run against an isolated
-// harness with Tauri IPC mocked. Kept apart from playwright.config.ts (which
-// targets the full app on port 1420): `bunx playwright test -c playwright.flow.config.ts`
+// Headless UI tests for the Per-app tone and onboarding Permissions screens,
+// run against isolated harnesses with Tauri IPC mocked. Kept apart from
+// playwright.config.ts (which targets the full app on port 1420):
+// `bunx playwright test -c playwright.flow.config.ts`
 import { defineConfig, devices } from "@playwright/test";
 
 const port = 1520;

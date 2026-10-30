@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Acessibilidade",
-        "why": "Para o seu atalho funcionar em todos os apps e o lowyap digitar o texto onde está o cursor."
+        "why": "Para o seu atalho funcionar em todos os apps e o lowyap digitar o texto onde está o cursor.",
+        "stillWaiting": "Já está ativado, mas continua aguardando? Selecione o lowyap na lista, remova-o com − e adicione-o novamente com +."
       },
       "errors": {
         "checkFailed": "Erro ao verificar permissões. Por favor, tente novamente.",

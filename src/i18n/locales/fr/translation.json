@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Accessibilité",
-        "why": "Pour que votre raccourci fonctionne dans toutes les apps et que lowyap puisse saisir le texte là où se trouve votre curseur."
+        "why": "Pour que votre raccourci fonctionne dans toutes les apps et que lowyap puisse saisir le texte là où se trouve votre curseur.",
+        "stillWaiting": "Déjà activé mais toujours en attente ? Sélectionnez lowyap dans la liste, retirez-le avec −, puis ajoutez-le à nouveau avec +."
       },
       "errors": {
         "checkFailed": "Échec de la vérification des autorisations. Veuillez réessayer.",

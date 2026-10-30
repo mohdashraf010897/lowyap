@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Aksesibilitas",
-        "why": "Agar pintasan Anda berfungsi di semua aplikasi, dan lowyap dapat mengetik teks di tempat kursor Anda berada."
+        "why": "Agar pintasan Anda berfungsi di semua aplikasi, dan lowyap dapat mengetik teks di tempat kursor Anda berada.",
+        "stillWaiting": "Sudah aktif tapi masih menunggu? Pilih lowyap di daftar itu, hapus dengan −, lalu tambahkan lagi dengan +."
       },
       "errors": {
         "checkFailed": "Gagal memeriksa izin. Silakan coba lagi.",

@@ -140,42 +140,66 @@ export const usePermissions = (preview: boolean): Permissions => {
     // The first check runs once.
   }, []);
 
-  const startPolling = useCallback(() => {
-    if (pollingRef.current) return;
-    pollingRef.current = setInterval(async () => {
-      try {
-        if (isWindows) {
-          if (await hasWindowsMicrophoneAccess()) {
-            setMicrophone("granted");
-            stopPolling();
-            await onAllGranted();
-          }
-          errorCountRef.current = 0;
-          return;
-        }
-        const [acc, mic] = await readMac();
-        setAccessibility((prev) => {
-          if (acc && prev !== "granted") initializeAfterAccessibility();
-          return acc ? "granted" : prev;
-        });
-        setMicrophone((prev) => (mic ? "granted" : prev));
-        if (acc && mic) {
+  /** One check: records grants only, so it never re-asks or downgrades. */
+  const poll = useCallback(async () => {
+    try {
+      if (isWindows) {
+        if (await hasWindowsMicrophoneAccess()) {
+          setMicrophone("granted");
           stopPolling();
           await onAllGranted();
         }
         errorCountRef.current = 0;
-      } catch (error) {
-        console.error("Error checking permissions:", error);
-        errorCountRef.current += 1;
-        if (errorCountRef.current >= MAX_POLLING_ERRORS) {
-          stopPolling();
-          toast.error(t("onboarding.permissions.errors.checkFailed"));
-        }
+        return;
       }
-    }, 1000);
+      const [acc, mic] = await readMac();
+      setAccessibility((prev) => {
+        if (acc && prev !== "granted") initializeAfterAccessibility();
+        return acc ? "granted" : prev;
+      });
+      setMicrophone((prev) => (mic ? "granted" : prev));
+      if (acc && mic) {
+        stopPolling();
+        await onAllGranted();
+      }
+      errorCountRef.current = 0;
+    } catch (error) {
+      console.error("Error checking permissions:", error);
+      errorCountRef.current += 1;
+      if (errorCountRef.current >= MAX_POLLING_ERRORS) {
+        stopPolling();
+        toast.error(t("onboarding.permissions.errors.checkFailed"));
+      }
+    }
   }, [hasWindowsMicrophoneAccess, isWindows, onAllGranted, t]);
 
+  const startPolling = useCallback(() => {
+    if (pollingRef.current) return;
+    pollingRef.current = setInterval(poll, 1000);
+  }, [poll]);
+
   useEffect(() => stopPolling, []);
+
+  // Poll while anything is missing, not only after Allow: the grant is made in
+  // System Settings, which may need no prompt (lowyap already listed), with
+  // lowyap unfocused. A hidden window's timers are suspended (WKWebView), so
+  // also check the moment it is shown or focused again.
+  const missing = needed && !allGranted;
+  useEffect(() => {
+    if (preview || !missing) return;
+    startPolling();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") poll();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    const unlisten = getCurrentWindow().onFocusChanged(({ payload }) => {
+      if (payload) poll();
+    });
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      unlisten.then((off) => off());
+    };
+  }, [preview, missing, startPolling, poll]);
 
   // A waiting row whose answer was no (or never came): ask again.
   const recheckWaiting = useCallback(async () => {

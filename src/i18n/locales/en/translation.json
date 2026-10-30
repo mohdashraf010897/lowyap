@@ -63,7 +63,8 @@
       },
       "accessibility": {
         "name": "Accessibility",
-        "why": "So your shortcut works in every app, and lowyap can type the text where your cursor is."
+        "why": "So your shortcut works in every app, and lowyap can type the text where your cursor is.",
+        "stillWaiting": "Already on but still waiting? Select lowyap in that list, remove it with −, then add it again with +."
       },
       "errors": {
         "checkFailed": "Failed to check permissions. Please try again.",
